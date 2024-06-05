@@ -1,5 +1,5 @@
 const form = document.getElementById("form_atividade")
-const imgAprovado = "<img src='./images/aprovado.png' alt='Emoji Aprovado' />"
+const imgAprovado = "<img src='./images/Aprovado.png' alt='Emoji Aprovado' />"
 const imgReprovado = "<img src='./images/Reprovado.png' alt='Emoji Reprovado' />"
 const atividades = []
 const notas = []
@@ -22,9 +22,12 @@ function adicionaLinha() {
         let linha = '<tr>'
         linha += `<td>${inputNomeAtividade.value}</td>`
         linha += `<td>${inputNotaAtividade.value}</td>`
-        linha += `<td>${inputNotaAtividade.value >= notaMinima ? imgAprovado : imgReprovado}</td>`
+        linha += `<td>${parseFloat(inputNotaAtividade.value) >= parseFloat(notaMinima) ? imgAprovado : imgReprovado}</td>`
         linha += `</tr>`
         
+        console.log(inputNotaAtividade.value)
+        console.log(notaMinima)
+
         linhas += linha;
     }
 }
